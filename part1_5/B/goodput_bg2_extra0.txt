@@ -1,0 +1,6 @@
+fid 0 goodput : 1.342 Mbps
+fid 1 goodput : 1.286 Mbps
+fid 2 goodput : 1.306 Mbps
+fid 3 goodput : 1.352 Mbps
+fid 4 goodput : 1.413 Mbps
+fid 5 goodput : 1.266 Mbps

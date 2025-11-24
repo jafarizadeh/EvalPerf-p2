@@ -1,0 +1,9 @@
+fid 0 brut=0.719 utile=0.713 retx_perte=0.84%
+fid 1 brut=0.727 utile=0.721 retx_perte=0.82%
+fid 2 brut=0.640 utile=0.634 retx_perte=0.96%
+fid 3 brut=0.664 utile=0.657 retx_perte=1.05%
+fid 4 brut=0.697 utile=0.691 retx_perte=0.81%
+fid 5 brut=0.690 utile=0.683 retx_perte=0.92%
+fid 6 brut=0.672 utile=0.666 retx_perte=0.93%
+fid 7 brut=0.646 utile=0.640 retx_perte=0.95%
+fid 8 brut=0.610 utile=0.604 retx_perte=0.92%

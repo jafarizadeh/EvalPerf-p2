@@ -1,0 +1,9 @@
+fid 0 brut : 0.719 Mbps
+fid 1 brut : 0.727 Mbps
+fid 2 brut : 0.640 Mbps
+fid 3 brut : 0.664 Mbps
+fid 4 brut : 0.697 Mbps
+fid 5 brut : 0.690 Mbps
+fid 6 brut : 0.672 Mbps
+fid 7 brut : 0.646 Mbps
+fid 8 brut : 0.610 Mbps
