@@ -1,0 +1,3 @@
+queue moyenne = 986.80 paquets
+queue max = 1963 paquets
+drops = 1954
