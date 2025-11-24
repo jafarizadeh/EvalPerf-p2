@@ -1,0 +1,6 @@
+fid 0 : 1.671 Mbps
+fid 1 : 1.594 Mbps
+fid 2 : 1.669 Mbps
+fid 3 : 1.664 Mbps
+fid 4 : 1.669 Mbps
+fid 5 : 1.594 Mbps
