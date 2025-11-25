@@ -7,7 +7,7 @@
 set ns [new Simulator]
 
 # -------- Parametres a faire varier --------
-set bgRate 4.0          ;# Mbps, trafic de fond (0 => pas de fond)
+set bgRate 4          ;# Mbps, trafic de fond (0 => pas de fond)
 set extraPerPair 1      ;# 0 ou 1 (ajoute 1 flux par paire)
 set qlim 200            ;# file du goulet (bon compromis vu 1.4)
 set simTime 200.0
