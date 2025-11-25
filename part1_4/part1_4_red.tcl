@@ -6,7 +6,7 @@
 set ns [new Simulator]
 
 # Taille de la file du goulet (a changer)
-set qlim 200
+set qlim 1000
 
 set ftrace [open "part1_4_red_${qlim}.tr" w]
 $ns trace-all $ftrace

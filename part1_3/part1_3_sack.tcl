@@ -27,7 +27,7 @@ $ns duplex-link $n4 $n5 100Mb 10ms DropTail
 $ns duplex-link $n4 $n6 100Mb 10ms DropTail
 $ns duplex-link $n4 $n7 100Mb 10ms DropTail
 
-# Goulet
+# Goulet (lien coeur)
 $ns duplex-link $n3 $n4 10Mb 10ms DropTail
 $ns queue-limit $n3 $n4 50
 $ns queue-limit $n4 $n3 50
@@ -36,22 +36,31 @@ $ns queue-limit $n4 $n3 50
 set qtrace [open part1_3_sack_queue.tr w]
 $ns trace-queue $n3 $n4 $qtrace
 
+# Creation d'un flux TCP Sack1 / FTP
 proc create_tcp_ftp {ns src dst fid variant tcpName sinkName ftpName} {
     upvar $tcpName tcp
     upvar $sinkName sink
     upvar $ftpName ftp
 
+    # Agent TCP cote source
     set tcp [new Agent/TCP/$variant]
     $tcp set fid_ $fid
     $tcp set window_ 2000
     $tcp set maxcwnd_ 2000
     $ns attach-agent $src $tcp
 
-    set sink [new Agent/TCPSink]
+    # Agent de reception cote destination
+    if {$variant == "Sack1"} {
+        set sink [new Agent/TCPSink/Sack1]
+    } else {
+        set sink [new Agent/TCPSink]
+    }
     $ns attach-agent $dst $sink
 
+    # Connexion TCP
     $ns connect $tcp $sink
 
+    # Application FTP au-dessus de TCP
     set ftp [new Application/FTP]
     $ftp attach-agent $tcp
 }
@@ -66,8 +75,10 @@ create_tcp_ftp $ns $n1 $n6 3 Sack1 tcp3 sink3 ftp3
 create_tcp_ftp $ns $n2 $n7 4 Sack1 tcp4 sink4 ftp4
 create_tcp_ftp $ns $n2 $n7 5 Sack1 tcp5 sink5 ftp5
 
+# Duree de simulation
 set simTime 200.0
 
+# Demarrage des flux
 $ns at 0.5 "$ftp0 start"
 $ns at 0.5 "$ftp1 start"
 $ns at 0.5 "$ftp2 start"
@@ -75,6 +86,7 @@ $ns at 0.5 "$ftp3 start"
 $ns at 0.5 "$ftp4 start"
 $ns at 0.5 "$ftp5 start"
 
+# Fin de simulation
 proc finish {} {
     global ns ftrace qtrace simTime
     $ns flush-trace
